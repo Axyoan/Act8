@@ -1,5 +1,5 @@
-from PySide2.QtWidgets import QApplication, QPushButton
 import sys
+from PySide2.QtWidgets import QApplication, QPushButton
 from mainwindow import MainWindow
 
 app =  QApplication()

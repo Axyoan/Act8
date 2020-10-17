@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>512</width>
-    <height>584</height>
+    <width>850</width>
+    <height>609</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -21,55 +21,43 @@
        <string>GroupBox</string>
       </property>
       <layout class="QGridLayout" name="gridLayout">
-       <item row="5" column="0" colspan="2">
-        <widget class="QLabel" name="lbl_velocity">
+       <item row="7" column="3">
+        <widget class="QSpinBox" name="spinBox_green">
          <property name="font">
           <font>
            <family>Arial</family>
-           <pointsize>14</pointsize>
+           <pointsize>12</pointsize>
           </font>
          </property>
-         <property name="text">
-          <string>Velocidad:</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+         <property name="maximum">
+          <number>255</number>
          </property>
         </widget>
        </item>
-       <item row="2" column="0" colspan="2">
-        <widget class="QLabel" name="lbl_yOrigin">
+       <item row="0" column="3">
+        <widget class="QLineEdit" name="line_id">
          <property name="font">
           <font>
            <family>Arial</family>
-           <pointsize>14</pointsize>
+           <pointsize>12</pointsize>
           </font>
-         </property>
-         <property name="text">
-          <string>Origen en Y:</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
          </property>
         </widget>
        </item>
-       <item row="8" column="1">
-        <widget class="QLabel" name="lbl_velocity_4">
+       <item row="11" column="1" colspan="3">
+        <widget class="QPushButton" name="btnCreate_back">
          <property name="font">
           <font>
            <family>Arial</family>
-           <pointsize>14</pointsize>
+           <pointsize>16</pointsize>
           </font>
          </property>
          <property name="text">
-          <string>G</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+          <string>Agregar final</string>
          </property>
         </widget>
        </item>
-       <item row="4" column="0" colspan="2">
+       <item row="4" column="1" colspan="2">
         <widget class="QLabel" name="lbl_yDestination">
          <property name="font">
           <font>
@@ -85,88 +73,20 @@
          </property>
         </widget>
        </item>
-       <item row="0" column="2">
-        <widget class="QLineEdit" name="line_id">
+       <item row="1" column="3">
+        <widget class="QSpinBox" name="spinBox_xOrigin">
          <property name="font">
           <font>
            <family>Arial</family>
            <pointsize>12</pointsize>
           </font>
          </property>
-        </widget>
-       </item>
-       <item row="10" column="0" colspan="3">
-        <widget class="QPushButton" name="btnCreate">
-         <property name="font">
-          <font>
-           <family>Arial</family>
-           <pointsize>16</pointsize>
-          </font>
-         </property>
-         <property name="text">
-          <string>Agregar</string>
+         <property name="maximum">
+          <number>500</number>
          </property>
         </widget>
        </item>
-       <item row="7" column="1">
-        <widget class="QLabel" name="lbl_velocity_3">
-         <property name="font">
-          <font>
-           <family>Arial</family>
-           <pointsize>14</pointsize>
-          </font>
-         </property>
-         <property name="text">
-          <string>R</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-         </property>
-        </widget>
-       </item>
-       <item row="9" column="1">
-        <widget class="QLabel" name="lbl_velocity_5">
-         <property name="font">
-          <font>
-           <family>Arial</family>
-           <pointsize>14</pointsize>
-          </font>
-         </property>
-         <property name="text">
-          <string>B</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-         </property>
-        </widget>
-       </item>
-       <item row="5" column="2">
-        <widget class="QLineEdit" name="line_velocity">
-         <property name="font">
-          <font>
-           <family>Arial</family>
-           <pointsize>12</pointsize>
-          </font>
-         </property>
-        </widget>
-       </item>
-       <item row="3" column="0" colspan="2">
-        <widget class="QLabel" name="lbl_xDestination">
-         <property name="font">
-          <font>
-           <family>Arial</family>
-           <pointsize>14</pointsize>
-          </font>
-         </property>
-         <property name="text">
-          <string>Destino en X:</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-         </property>
-        </widget>
-       </item>
-       <item row="2" column="2">
+       <item row="2" column="3">
         <widget class="QSpinBox" name="spinBox_yOrigin">
          <property name="font">
           <font>
@@ -195,7 +115,78 @@
          </property>
         </widget>
        </item>
-       <item row="1" column="0" colspan="2">
+       <item row="8" column="1">
+        <widget class="QLabel" name="lbl_velocity_5">
+         <property name="font">
+          <font>
+           <family>Arial</family>
+           <pointsize>14</pointsize>
+          </font>
+         </property>
+         <property name="text">
+          <string>B</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="3">
+        <widget class="QSpinBox" name="spinBox_yDestination">
+         <property name="font">
+          <font>
+           <family>Arial</family>
+           <pointsize>12</pointsize>
+          </font>
+         </property>
+         <property name="maximum">
+          <number>500</number>
+         </property>
+        </widget>
+       </item>
+       <item row="7" column="1">
+        <widget class="QLabel" name="lbl_velocity_4">
+         <property name="font">
+          <font>
+           <family>Arial</family>
+           <pointsize>14</pointsize>
+          </font>
+         </property>
+         <property name="text">
+          <string>G</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="6" column="3">
+        <widget class="QSpinBox" name="spinBox_red">
+         <property name="font">
+          <font>
+           <family>Arial</family>
+           <pointsize>12</pointsize>
+          </font>
+         </property>
+         <property name="maximum">
+          <number>255</number>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="3">
+        <widget class="QSpinBox" name="spinBox_xDestination">
+         <property name="font">
+          <font>
+           <family>Arial</family>
+           <pointsize>12</pointsize>
+          </font>
+         </property>
+         <property name="maximum">
+          <number>500</number>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1" colspan="2">
         <widget class="QLabel" name="lbl_xOrigin">
          <property name="font">
           <font>
@@ -211,72 +202,17 @@
          </property>
         </widget>
        </item>
-       <item row="1" column="2">
-        <widget class="QSpinBox" name="spinBox_xOrigin">
+       <item row="5" column="3">
+        <widget class="QLineEdit" name="line_velocity">
          <property name="font">
           <font>
            <family>Arial</family>
            <pointsize>12</pointsize>
           </font>
          </property>
-         <property name="maximum">
-          <number>500</number>
-         </property>
         </widget>
        </item>
-       <item row="3" column="2">
-        <widget class="QSpinBox" name="spinBox_xDestination">
-         <property name="font">
-          <font>
-           <family>Arial</family>
-           <pointsize>12</pointsize>
-          </font>
-         </property>
-         <property name="maximum">
-          <number>500</number>
-         </property>
-        </widget>
-       </item>
-       <item row="4" column="2">
-        <widget class="QSpinBox" name="spinBox_yDestination">
-         <property name="font">
-          <font>
-           <family>Arial</family>
-           <pointsize>12</pointsize>
-          </font>
-         </property>
-         <property name="maximum">
-          <number>500</number>
-         </property>
-        </widget>
-       </item>
-       <item row="7" column="2">
-        <widget class="QSpinBox" name="spinBox_red">
-         <property name="font">
-          <font>
-           <family>Arial</family>
-           <pointsize>12</pointsize>
-          </font>
-         </property>
-         <property name="maximum">
-          <number>255</number>
-         </property>
-        </widget>
-       </item>
-       <item row="8" column="2">
-        <widget class="QSpinBox" name="spinBox_green">
-         <property name="font">
-          <font>
-           <family>Arial</family>
-           <pointsize>12</pointsize>
-          </font>
-         </property>
-         <property name="maximum">
-          <number>255</number>
-         </property>
-        </widget>
-       </item>
-       <item row="9" column="2">
+       <item row="8" column="3">
         <widget class="QSpinBox" name="spinBox_blue">
          <property name="font">
           <font>
@@ -289,7 +225,107 @@
          </property>
         </widget>
        </item>
+       <item row="6" column="1">
+        <widget class="QLabel" name="lbl_velocity_3">
+         <property name="font">
+          <font>
+           <family>Arial</family>
+           <pointsize>14</pointsize>
+          </font>
+         </property>
+         <property name="text">
+          <string>R</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="1" colspan="2">
+        <widget class="QLabel" name="lbl_xDestination">
+         <property name="font">
+          <font>
+           <family>Arial</family>
+           <pointsize>14</pointsize>
+          </font>
+         </property>
+         <property name="text">
+          <string>Destino en X:</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="1" colspan="2">
+        <widget class="QLabel" name="lbl_velocity">
+         <property name="font">
+          <font>
+           <family>Arial</family>
+           <pointsize>14</pointsize>
+          </font>
+         </property>
+         <property name="text">
+          <string>Velocidad:</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="1" colspan="2">
+        <widget class="QLabel" name="lbl_yOrigin">
+         <property name="font">
+          <font>
+           <family>Arial</family>
+           <pointsize>14</pointsize>
+          </font>
+         </property>
+         <property name="text">
+          <string>Origen en Y:</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="10" column="1" colspan="3">
+        <widget class="QPushButton" name="btnCreate_front">
+         <property name="font">
+          <font>
+           <family>Arial</family>
+           <pointsize>16</pointsize>
+          </font>
+         </property>
+         <property name="text">
+          <string>Agregar inicio</string>
+         </property>
+        </widget>
+       </item>
+       <item row="12" column="1" colspan="3">
+        <widget class="QPushButton" name="btn_show">
+         <property name="font">
+          <font>
+           <family>Arial</family>
+           <pointsize>16</pointsize>
+          </font>
+         </property>
+         <property name="text">
+          <string>Mostrar</string>
+         </property>
+        </widget>
+       </item>
       </layout>
+     </widget>
+    </item>
+    <item row="0" column="1">
+     <widget class="QPlainTextEdit" name="plainText">
+      <property name="font">
+       <font>
+        <family>Arial</family>
+        <pointsize>14</pointsize>
+       </font>
+      </property>
      </widget>
     </item>
    </layout>
@@ -299,7 +335,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>512</width>
+     <width>850</width>
      <height>21</height>
     </rect>
    </property>
