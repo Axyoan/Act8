@@ -5,10 +5,10 @@ class AdministradorParticula:
         self.__particulas = []
 
     def agregar_inicio(self, particula:Particula):
-        self.__particulas.append(particula)
+        self.__particulas.insert(0, particula)
 
     def agregar_final(self, particula:Particula):
-        self.__particulas.insert(0, particula)
+        self.__particulas.append(particula)
 
     def mostrar(self):
         for p in self.__particulas:
