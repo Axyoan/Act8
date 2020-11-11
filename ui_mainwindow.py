@@ -227,6 +227,26 @@ class Ui_MainWindow(object):
         self.gridLayout_4.addWidget(self.pushButton_showTable, 1, 2, 1, 1)
 
         self.tabWidget.addTab(self.tab_2, "")
+        self.tab_3 = QWidget()
+        self.tab_3.setObjectName(u"tab_3")
+        self.gridLayout_5 = QGridLayout(self.tab_3)
+        self.gridLayout_5.setObjectName(u"gridLayout_5")
+        self.graphicsView = QGraphicsView(self.tab_3)
+        self.graphicsView.setObjectName(u"graphicsView")
+
+        self.gridLayout_5.addWidget(self.graphicsView, 0, 0, 1, 2)
+
+        self.pushButton_draw = QPushButton(self.tab_3)
+        self.pushButton_draw.setObjectName(u"pushButton_draw")
+
+        self.gridLayout_5.addWidget(self.pushButton_draw, 1, 0, 1, 1)
+
+        self.pushButton_clear = QPushButton(self.tab_3)
+        self.pushButton_clear.setObjectName(u"pushButton_clear")
+
+        self.gridLayout_5.addWidget(self.pushButton_clear, 1, 1, 1, 1)
+
+        self.tabWidget.addTab(self.tab_3, "")
 
         self.gridLayout_3.addWidget(self.tabWidget, 0, 0, 1, 1)
 
@@ -247,7 +267,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.tabWidget.setCurrentIndex(0)
+        self.tabWidget.setCurrentIndex(2)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -281,6 +301,9 @@ class Ui_MainWindow(object):
         self.pushButton_read.setText(QCoreApplication.translate("MainWindow", u"Buscar", None))
         self.pushButton_showTable.setText(QCoreApplication.translate("MainWindow", u"Mostrar", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_2), QCoreApplication.translate("MainWindow", u"Tabla", None))
+        self.pushButton_draw.setText(QCoreApplication.translate("MainWindow", u"Dibujar", None))
+        self.pushButton_clear.setText(QCoreApplication.translate("MainWindow", u"Limpiar", None))
+        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_3), QCoreApplication.translate("MainWindow", u"Escena", None))
         self.menuArchivo.setTitle(QCoreApplication.translate("MainWindow", u"Archivo", None))
     # retranslateUi
 
