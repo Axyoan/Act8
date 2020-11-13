@@ -24,7 +24,7 @@
        </font>
       </property>
       <property name="currentIndex">
-       <number>2</number>
+       <number>1</number>
       </property>
       <widget class="QWidget" name="tab">
        <attribute name="title">
@@ -351,6 +351,19 @@
         <string>Tabla</string>
        </attribute>
        <layout class="QGridLayout" name="gridLayout_4">
+        <item row="1" column="2">
+         <widget class="QPushButton" name="pushButton_showTable">
+          <property name="font">
+           <font>
+            <family>Arial</family>
+            <pointsize>14</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>Mostrar</string>
+          </property>
+         </widget>
+        </item>
         <item row="0" column="0" colspan="3">
          <widget class="QTableWidget" name="tableWidget">
           <property name="font">
@@ -361,16 +374,10 @@
           </property>
          </widget>
         </item>
-        <item row="1" column="0">
-         <widget class="QLineEdit" name="lineEdit_read">
-          <property name="font">
-           <font>
-            <family>Arial</family>
-            <pointsize>12</pointsize>
-           </font>
-          </property>
-          <property name="placeholderText">
-           <string>id</string>
+        <item row="2" column="0">
+         <widget class="QLabel" name="lbl_sort">
+          <property name="text">
+           <string>Ordenar por:</string>
           </property>
          </widget>
         </item>
@@ -387,18 +394,61 @@
           </property>
          </widget>
         </item>
-        <item row="1" column="2">
-         <widget class="QPushButton" name="pushButton_showTable">
+        <item row="1" column="0">
+         <widget class="QLineEdit" name="lineEdit_read">
           <property name="font">
            <font>
             <family>Arial</family>
-            <pointsize>14</pointsize>
+            <pointsize>12</pointsize>
            </font>
           </property>
-          <property name="text">
-           <string>Mostrar</string>
+          <property name="placeholderText">
+           <string>id</string>
           </property>
          </widget>
+        </item>
+        <item row="4" column="0" colspan="3">
+         <layout class="QHBoxLayout" name="horizontalLayout">
+          <item>
+           <widget class="QPushButton" name="pushButton_sortId">
+            <property name="font">
+             <font>
+              <family>Arial</family>
+              <pointsize>14</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>id (ascendente)</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="pushButton_sortDistance">
+            <property name="font">
+             <font>
+              <family>Arial</family>
+              <pointsize>14</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>Distancia (descendente)</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="pushButton_sortVelocity">
+            <property name="font">
+             <font>
+              <family>Arial</family>
+              <pointsize>14</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>Velocidad (ascendente)</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
         </item>
        </layout>
       </widget>

@@ -56,3 +56,6 @@ class AdministradorParticula:
             return particula
         else:
             raise StopIteration
+        
+    def sort(self, lmbd, rvrs):
+        self.__particulas.sort(key=lmbd, reverse=rvrs)

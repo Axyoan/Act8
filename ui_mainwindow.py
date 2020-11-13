@@ -202,17 +202,22 @@ class Ui_MainWindow(object):
         self.tab_2.setObjectName(u"tab_2")
         self.gridLayout_4 = QGridLayout(self.tab_2)
         self.gridLayout_4.setObjectName(u"gridLayout_4")
+        self.pushButton_showTable = QPushButton(self.tab_2)
+        self.pushButton_showTable.setObjectName(u"pushButton_showTable")
+        self.pushButton_showTable.setFont(font1)
+
+        self.gridLayout_4.addWidget(self.pushButton_showTable, 1, 2, 1, 1)
+
         self.tableWidget = QTableWidget(self.tab_2)
         self.tableWidget.setObjectName(u"tableWidget")
         self.tableWidget.setFont(font2)
 
         self.gridLayout_4.addWidget(self.tableWidget, 0, 0, 1, 3)
 
-        self.lineEdit_read = QLineEdit(self.tab_2)
-        self.lineEdit_read.setObjectName(u"lineEdit_read")
-        self.lineEdit_read.setFont(font2)
+        self.lbl_sort = QLabel(self.tab_2)
+        self.lbl_sort.setObjectName(u"lbl_sort")
 
-        self.gridLayout_4.addWidget(self.lineEdit_read, 1, 0, 1, 1)
+        self.gridLayout_4.addWidget(self.lbl_sort, 2, 0, 1, 1)
 
         self.pushButton_read = QPushButton(self.tab_2)
         self.pushButton_read.setObjectName(u"pushButton_read")
@@ -220,11 +225,34 @@ class Ui_MainWindow(object):
 
         self.gridLayout_4.addWidget(self.pushButton_read, 1, 1, 1, 1)
 
-        self.pushButton_showTable = QPushButton(self.tab_2)
-        self.pushButton_showTable.setObjectName(u"pushButton_showTable")
-        self.pushButton_showTable.setFont(font1)
+        self.lineEdit_read = QLineEdit(self.tab_2)
+        self.lineEdit_read.setObjectName(u"lineEdit_read")
+        self.lineEdit_read.setFont(font2)
 
-        self.gridLayout_4.addWidget(self.pushButton_showTable, 1, 2, 1, 1)
+        self.gridLayout_4.addWidget(self.lineEdit_read, 1, 0, 1, 1)
+
+        self.horizontalLayout = QHBoxLayout()
+        self.horizontalLayout.setObjectName(u"horizontalLayout")
+        self.pushButton_sortId = QPushButton(self.tab_2)
+        self.pushButton_sortId.setObjectName(u"pushButton_sortId")
+        self.pushButton_sortId.setFont(font1)
+
+        self.horizontalLayout.addWidget(self.pushButton_sortId)
+
+        self.pushButton_sortDistance = QPushButton(self.tab_2)
+        self.pushButton_sortDistance.setObjectName(u"pushButton_sortDistance")
+        self.pushButton_sortDistance.setFont(font1)
+
+        self.horizontalLayout.addWidget(self.pushButton_sortDistance)
+
+        self.pushButton_sortVelocity = QPushButton(self.tab_2)
+        self.pushButton_sortVelocity.setObjectName(u"pushButton_sortVelocity")
+        self.pushButton_sortVelocity.setFont(font1)
+
+        self.horizontalLayout.addWidget(self.pushButton_sortVelocity)
+
+
+        self.gridLayout_4.addLayout(self.horizontalLayout, 4, 0, 1, 3)
 
         self.tabWidget.addTab(self.tab_2, "")
         self.tab_3 = QWidget()
@@ -267,7 +295,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.tabWidget.setCurrentIndex(2)
+        self.tabWidget.setCurrentIndex(1)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -297,9 +325,13 @@ class Ui_MainWindow(object):
         self.btn_show.setText(QCoreApplication.translate("MainWindow", u"Mostrar", None))
         self.lbl_id.setText(QCoreApplication.translate("MainWindow", u"id:", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab), QCoreApplication.translate("MainWindow", u"Agregar", None))
-        self.lineEdit_read.setPlaceholderText(QCoreApplication.translate("MainWindow", u"id", None))
-        self.pushButton_read.setText(QCoreApplication.translate("MainWindow", u"Buscar", None))
         self.pushButton_showTable.setText(QCoreApplication.translate("MainWindow", u"Mostrar", None))
+        self.lbl_sort.setText(QCoreApplication.translate("MainWindow", u"Ordenar por:", None))
+        self.pushButton_read.setText(QCoreApplication.translate("MainWindow", u"Buscar", None))
+        self.lineEdit_read.setPlaceholderText(QCoreApplication.translate("MainWindow", u"id", None))
+        self.pushButton_sortId.setText(QCoreApplication.translate("MainWindow", u"id (ascendente)", None))
+        self.pushButton_sortDistance.setText(QCoreApplication.translate("MainWindow", u"Distancia (descendente)", None))
+        self.pushButton_sortVelocity.setText(QCoreApplication.translate("MainWindow", u"Velocidad (ascendente)", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_2), QCoreApplication.translate("MainWindow", u"Tabla", None))
         self.pushButton_draw.setText(QCoreApplication.translate("MainWindow", u"Dibujar", None))
         self.pushButton_clear.setText(QCoreApplication.translate("MainWindow", u"Limpiar", None))

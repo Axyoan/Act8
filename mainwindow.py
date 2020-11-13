@@ -25,7 +25,10 @@ class MainWindow(QMainWindow):
         self.ui.pushButton_showTable.clicked.connect(self.showTable)
         self.ui.pushButton_draw.clicked.connect(self.draw)
         self.ui.pushButton_clear.clicked.connect(self.clearScreen)
-
+        self.ui.pushButton_sortId.clicked.connect(self.sortIdAsc)
+        self.ui.pushButton_sortDistance.clicked.connect(self.sortDistanceDesc)
+        self.ui.pushButton_sortVelocity.clicked.connect(self.sortVelocityAsc)
+                
         self.scene = QGraphicsScene()
         self.ui.graphicsView.setScene(self.scene)
 
@@ -182,3 +185,18 @@ class MainWindow(QMainWindow):
     @Slot()
     def clearScreen(self):
         self.scene.clear()
+
+    @Slot()
+    def sortIdAsc(self):
+        self.administrador.sort(lambda particula: particula.id, False)
+        click_show()
+
+    @Slot()
+    def sortDistanceDesc(self):
+        self.administrador.sort(lambda particula: particula.distancia, True)
+        click_show()
+
+    @Slot()
+    def sortVelocityAsc(self):
+        self.administrador.sort(lambda particula: particula.velocidad, False)
+        click_show()
