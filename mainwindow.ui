@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>731</width>
-    <height>535</height>
+    <height>538</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -24,7 +24,7 @@
        </font>
       </property>
       <property name="currentIndex">
-       <number>1</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="tab">
        <attribute name="title">
@@ -496,7 +496,14 @@
     <addaction name="actionAbrir"/>
     <addaction name="actionGuardar"/>
    </widget>
+   <widget class="QMenu" name="menuVer">
+    <property name="title">
+     <string>Ver</string>
+    </property>
+    <addaction name="actionGrafo"/>
+   </widget>
    <addaction name="menuArchivo"/>
+   <addaction name="menuVer"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
   <action name="actionAbrir">
@@ -513,6 +520,14 @@
    </property>
    <property name="shortcut">
     <string>Ctrl+S</string>
+   </property>
+  </action>
+  <action name="actionGrafo">
+   <property name="text">
+    <string>Grafo</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+G</string>
    </property>
   </action>
  </widget>

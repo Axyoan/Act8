@@ -17,11 +17,13 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(731, 535)
+        MainWindow.resize(731, 538)
         self.actionAbrir = QAction(MainWindow)
         self.actionAbrir.setObjectName(u"actionAbrir")
         self.actionGuardar = QAction(MainWindow)
         self.actionGuardar.setObjectName(u"actionGuardar")
+        self.actionGrafo = QAction(MainWindow)
+        self.actionGrafo.setObjectName(u"actionGrafo")
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
         self.gridLayout_3 = QGridLayout(self.centralwidget)
@@ -284,18 +286,22 @@ class Ui_MainWindow(object):
         self.menubar.setGeometry(QRect(0, 0, 731, 21))
         self.menuArchivo = QMenu(self.menubar)
         self.menuArchivo.setObjectName(u"menuArchivo")
+        self.menuVer = QMenu(self.menubar)
+        self.menuVer.setObjectName(u"menuVer")
         MainWindow.setMenuBar(self.menubar)
         self.statusbar = QStatusBar(MainWindow)
         self.statusbar.setObjectName(u"statusbar")
         MainWindow.setStatusBar(self.statusbar)
 
         self.menubar.addAction(self.menuArchivo.menuAction())
+        self.menubar.addAction(self.menuVer.menuAction())
         self.menuArchivo.addAction(self.actionAbrir)
         self.menuArchivo.addAction(self.actionGuardar)
+        self.menuVer.addAction(self.actionGrafo)
 
         self.retranslateUi(MainWindow)
 
-        self.tabWidget.setCurrentIndex(1)
+        self.tabWidget.setCurrentIndex(0)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -310,6 +316,10 @@ class Ui_MainWindow(object):
         self.actionGuardar.setText(QCoreApplication.translate("MainWindow", u"Guardar", None))
 #if QT_CONFIG(shortcut)
         self.actionGuardar.setShortcut(QCoreApplication.translate("MainWindow", u"Ctrl+S", None))
+#endif // QT_CONFIG(shortcut)
+        self.actionGrafo.setText(QCoreApplication.translate("MainWindow", u"Grafo", None))
+#if QT_CONFIG(shortcut)
+        self.actionGrafo.setShortcut(QCoreApplication.translate("MainWindow", u"Ctrl+G", None))
 #endif // QT_CONFIG(shortcut)
         self.groupBox.setTitle(QCoreApplication.translate("MainWindow", u"GroupBox", None))
         self.lbl_yDestination.setText(QCoreApplication.translate("MainWindow", u"Destino en Y:", None))
@@ -337,5 +347,6 @@ class Ui_MainWindow(object):
         self.pushButton_clear.setText(QCoreApplication.translate("MainWindow", u"Limpiar", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_3), QCoreApplication.translate("MainWindow", u"Escena", None))
         self.menuArchivo.setTitle(QCoreApplication.translate("MainWindow", u"Archivo", None))
+        self.menuVer.setTitle(QCoreApplication.translate("MainWindow", u"Ver", None))
     # retranslateUi
 

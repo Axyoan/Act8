@@ -6,13 +6,14 @@ from random import randint
 from ui_mainwindow import Ui_MainWindow
 from administrador_particulas import AdministradorParticula
 from particula import Particula
-from pprint import pprint
+from pprint import pformat, pprint
 
 
 class MainWindow(QMainWindow):
     def __init__(self):
         super(MainWindow, self).__init__()
         self.administrador = AdministradorParticula()
+        self.graph = dict()
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
         self.ui.line_id.setValidator(QIntValidator(1, 1000))
@@ -22,6 +23,7 @@ class MainWindow(QMainWindow):
         self.ui.btn_show.clicked.connect(self.click_show)
         self.ui.actionAbrir.triggered.connect(self.action_open_file)
         self.ui.actionGuardar.triggered.connect(self.action_save_file)
+        self.ui.actionGrafo.triggered.connect(self.showGraph)
         self.ui.pushButton_read.clicked.connect(self.readTable)
         self.ui.pushButton_showTable.clicked.connect(self.showTable)
         self.ui.pushButton_draw.clicked.connect(self.draw)
@@ -32,6 +34,21 @@ class MainWindow(QMainWindow):
 
         self.scene = QGraphicsScene()
         self.ui.graphicsView.setScene(self.scene)
+
+    def insertVertex(self, p):
+        if (p.origen_x, p.origen_y) in self.graph:
+            self.graph[(p.origen_x, p.origen_y)].append(
+                ((p.destino_x, p.destino_y), p.distancia))
+        else:
+            self.graph[(p.origen_x, p.origen_y)] = [
+                ((p.destino_x, p.destino_y), p.distancia)]
+
+        if((p.destino_x, p.destino_y)) in self.graph:
+            self.graph[(p.destino_x, p.destino_y)].append(
+                ((p.origen_x, p.origen_y), p.distancia))
+        else:
+            self.graph[(p.destino_x, p.destino_y)] = [
+                ((p.origen_x, p.origen_y), p.distancia)]
 
     def clearInput(self):
         self.ui.line_id.setText("")
@@ -121,6 +138,8 @@ class MainWindow(QMainWindow):
                 "Éxito",
                 "Se pudo abrir el archivo "+directory
             )
+            for p in self.administrador:
+                self.insertVertex(p)
         else:
             QMessageBox.critical(
                 self,
@@ -153,14 +172,18 @@ class MainWindow(QMainWindow):
     def click_create_front(self):
         if(self.ui.line_id.text() == "" or self.ui.line_velocity.text() == ""):
             return
-        self.administrador.agregar_inicio(self.createParticle())
+        p = self.createParticle()
+        self.administrador.agregar_inicio(p)
+        self.insertVertex(p)
         self.clearInput()
 
     @Slot()
     def click_create_back(self):
         if(self.ui.line_id.text() == "" or self.ui.line_velocity.text() == ""):
             return
-        self.administrador.agregar_final(self.createParticle())
+        p = self.createParticle()
+        self.administrador.agregar_final(p)
+        self.insertVertex(p)
         self.clearInput()
 
     @Slot()
@@ -204,3 +227,10 @@ class MainWindow(QMainWindow):
         self.administrador.sort(lambda particula: particula.velocidad, False)
         self.click_show()
         self.showTable()
+
+    @Slot()
+    def showGraph(self):
+        str_g = pformat(self.graph, width=40, indent=1)
+        print(str_g)
+        self.ui.plainText.clear()
+        self.ui.plainText.insertPlainText(str_g)
