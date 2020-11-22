@@ -6,6 +6,7 @@ from random import randint
 from ui_mainwindow import Ui_MainWindow
 from administrador_particulas import AdministradorParticula
 from particula import Particula
+from pprint import pprint
 
 
 class MainWindow(QMainWindow):
@@ -28,7 +29,7 @@ class MainWindow(QMainWindow):
         self.ui.pushButton_sortId.clicked.connect(self.sortIdAsc)
         self.ui.pushButton_sortDistance.clicked.connect(self.sortDistanceDesc)
         self.ui.pushButton_sortVelocity.clicked.connect(self.sortVelocityAsc)
-                
+
         self.scene = QGraphicsScene()
         self.ui.graphicsView.setScene(self.scene)
 
@@ -101,10 +102,10 @@ class MainWindow(QMainWindow):
     @Slot()
     def showTable(self):
         self.ui.tableWidget.setRowCount(len(self.administrador))
-        rowCount = 0
+        row_count = 0
         for particula in self.administrador:
-            self.createRow(particula, rowCount)
-            rowCount += 1
+            self.createRow(particula, row_count)
+            row_count += 1
 
     @ Slot()
     def action_open_file(self):
@@ -189,14 +190,17 @@ class MainWindow(QMainWindow):
     @Slot()
     def sortIdAsc(self):
         self.administrador.sort(lambda particula: particula.id, False)
-        click_show()
+        self.click_show()
+        self.showTable()
 
     @Slot()
     def sortDistanceDesc(self):
         self.administrador.sort(lambda particula: particula.distancia, True)
-        click_show()
+        self.click_show()
+        self.showTable()
 
     @Slot()
     def sortVelocityAsc(self):
         self.administrador.sort(lambda particula: particula.velocidad, False)
-        click_show()
+        self.click_show()
+        self.showTable()
