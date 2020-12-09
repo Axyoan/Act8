@@ -24,6 +24,8 @@ class Ui_MainWindow(object):
         self.actionGuardar.setObjectName(u"actionGuardar")
         self.actionGrafo = QAction(MainWindow)
         self.actionGrafo.setObjectName(u"actionGrafo")
+        self.actionRecorridos_en_profundidad_amplitud = QAction(MainWindow)
+        self.actionRecorridos_en_profundidad_amplitud.setObjectName(u"actionRecorridos_en_profundidad_amplitud")
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
         self.gridLayout_3 = QGridLayout(self.centralwidget)
@@ -288,6 +290,8 @@ class Ui_MainWindow(object):
         self.menuArchivo.setObjectName(u"menuArchivo")
         self.menuVer = QMenu(self.menubar)
         self.menuVer.setObjectName(u"menuVer")
+        self.menuAlgoritmos = QMenu(self.menubar)
+        self.menuAlgoritmos.setObjectName(u"menuAlgoritmos")
         MainWindow.setMenuBar(self.menubar)
         self.statusbar = QStatusBar(MainWindow)
         self.statusbar.setObjectName(u"statusbar")
@@ -295,9 +299,11 @@ class Ui_MainWindow(object):
 
         self.menubar.addAction(self.menuArchivo.menuAction())
         self.menubar.addAction(self.menuVer.menuAction())
+        self.menubar.addAction(self.menuAlgoritmos.menuAction())
         self.menuArchivo.addAction(self.actionAbrir)
         self.menuArchivo.addAction(self.actionGuardar)
         self.menuVer.addAction(self.actionGrafo)
+        self.menuAlgoritmos.addAction(self.actionRecorridos_en_profundidad_amplitud)
 
         self.retranslateUi(MainWindow)
 
@@ -321,6 +327,7 @@ class Ui_MainWindow(object):
 #if QT_CONFIG(shortcut)
         self.actionGrafo.setShortcut(QCoreApplication.translate("MainWindow", u"Ctrl+G", None))
 #endif // QT_CONFIG(shortcut)
+        self.actionRecorridos_en_profundidad_amplitud.setText(QCoreApplication.translate("MainWindow", u"Recorridos en profundidad/amplitud", None))
         self.groupBox.setTitle(QCoreApplication.translate("MainWindow", u"GroupBox", None))
         self.lbl_yDestination.setText(QCoreApplication.translate("MainWindow", u"Destino en Y:", None))
         self.lbl_xOrigin.setText(QCoreApplication.translate("MainWindow", u"Origen en X:", None))
@@ -348,5 +355,6 @@ class Ui_MainWindow(object):
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_3), QCoreApplication.translate("MainWindow", u"Escena", None))
         self.menuArchivo.setTitle(QCoreApplication.translate("MainWindow", u"Archivo", None))
         self.menuVer.setTitle(QCoreApplication.translate("MainWindow", u"Ver", None))
+        self.menuAlgoritmos.setTitle(QCoreApplication.translate("MainWindow", u"Algoritmos", None))
     # retranslateUi
 

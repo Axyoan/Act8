@@ -7,6 +7,7 @@ from ui_mainwindow import Ui_MainWindow
 from administrador_particulas import AdministradorParticula
 from particula import Particula
 from pprint import pformat, pprint
+from collections import deque
 
 
 class MainWindow(QMainWindow):
@@ -31,6 +32,8 @@ class MainWindow(QMainWindow):
         self.ui.pushButton_sortId.clicked.connect(self.sortIdAsc)
         self.ui.pushButton_sortDistance.clicked.connect(self.sortDistanceDesc)
         self.ui.pushButton_sortVelocity.clicked.connect(self.sortVelocityAsc)
+        self.ui.actionRecorridos_en_profundidad_amplitud.triggered.connect(
+            self.action_graph_traversal)
 
         self.scene = QGraphicsScene()
         self.ui.graphicsView.setScene(self.scene)
@@ -234,3 +237,51 @@ class MainWindow(QMainWindow):
         print(str_g)
         self.ui.plainText.clear()
         self.ui.plainText.insertPlainText(str_g)
+
+    @Slot()
+    def action_graph_traversal(self):
+        print("Búsqueda en profundidad:")
+        self.dfs()
+        print("Búsqueda en amplitud:")
+        self.bfs()
+        print("\n")
+
+    def dfs(self):
+        stack = deque()
+        stack.append((self.ui.spinBox_xOrigin.value(),
+                      self.ui.spinBox_yOrigin.value()))
+
+        visited = {(self.ui.spinBox_xOrigin.value(),
+                    self.ui.spinBox_yOrigin.value())}
+
+        flag = True
+        while(flag):
+            try:
+                u = stack.pop()
+                print(u)
+                for p in self.graph[u]:
+                    v = p[0]
+                    if(v not in visited):
+                        stack.append(v)
+                        visited.add(v)
+            except:
+                flag = False
+
+    def bfs(self):
+        queue = deque()
+        queue.append((self.ui.spinBox_xOrigin.value(),
+                      self.ui.spinBox_yOrigin.value()))
+        visited = {((self.ui.spinBox_xOrigin.value(),
+                     self.ui.spinBox_yOrigin.value()))}
+        flag = True
+        while(flag):
+            try:
+                u = queue.popleft()
+                print(u)
+                for p in self.graph[u]:
+                    v = p[0]
+                    if(v not in visited):
+                        queue.append(v)
+                        visited.add(v)
+            except:
+                flag = False
